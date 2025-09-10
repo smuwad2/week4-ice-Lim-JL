@@ -37,11 +37,13 @@
                 if(password.trim() == ""){
                     errorMessages += "Password must be non-empty."
                 }
-                if(errorMessages != ""){
-                    alert(errorMessages)
-                }
                 //adding a form reset here cus it doesnt seem to be resetting or autofilling properly
                 form.reset();
+                if(errorMessages != ""){
+                    alert(errorMessages)
+                    return false;
+                }
+                return true;
                 
             }
      
