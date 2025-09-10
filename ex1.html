@@ -23,7 +23,25 @@
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
                 var errorMessages="";
-                
+                const form = document.forms["inputForm"]
+                const age = form.elements.age.value;
+                const id = form.elements.id.value;
+                const email = form.elements.email.value;
+                const password = form.elements.password.value;
+                if(age=="" || (parseInt(age)>40 || parseInt(age) <10)){
+                    errorMessages += "Invalid age: Age must be between 10 and 40.\n"
+                }
+                if(!email.includes("@")){
+                    errorMessages += "Invalid email: Email must contain the character @.\n"
+                }
+                if(password.trim() == ""){
+                    errorMessages += "Empty password: Password must be non-empty."
+                }
+                if(errorMessages != ""){
+                    alert(errorMessages)
+                }
+                //adding a form reset here cus it doesnt seem to be resetting or autofilling properly
+                form.reset();
                 
             }
      
