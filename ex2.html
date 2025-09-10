@@ -31,12 +31,11 @@
             const shape = document.getElementById("div1");
             if(square){
                 shape.style.borderRadius = "50%";
-                square = false;
             }
             else{
                 shape.style.borderRadius = "";
-                square = true;
             }
+            square = !square;
         }
     </script>
 

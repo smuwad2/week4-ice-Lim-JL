@@ -11,20 +11,36 @@
 
    <input type="text" id="inputText">
    <!-- add a button here for adding new item -->
+   <button onClick="addItems()">Enter</button>
 
-   <ul>
-      <li>Notebook<!--<button>Delete</button></li>-->
-      <li>Jello</li>
-      <li>Spinach</li>
-      <li>Rice</li>
-      <li>Birthday Cake</li>
-      <li>Candles</li>
+   <ul id="list">
+      <li>Notebook<button onClick="deleteItem(this)">Delete</button></li>
+      <li>Jello<button onClick="deleteItem(this)">Delete</button></li>
+      <li>Spinach<button onClick="deleteItem(this)">Delete</button></li>
+      <li>Rice<button onClick="deleteItem(this)">Delete</button></li>
+      <li>Birthday Cake<button onClick="deleteItem(this)">Delete</button></li>
+      <li>Candles<button onClick="deleteItem(this)">Delete</button></li>
    </ul>
 
    <script>
 
       // add code here
-
+      function addItems(){
+         const inputText = document.getElementById("inputText");
+         var inputValue = inputText.value
+         const list = document.getElementById("list")
+         const newItem = document.createElement("li");
+         const deleteButton = document.createElement("button");
+         deleteButton.innerText = "Delete";
+         deleteButton.setAttribute("onclick","deleteItem(this)")
+         newItem.innerText = inputValue;
+         newItem.appendChild(deleteButton);
+         list.appendChild(newItem);
+         inputText.value = ""; //reset the field
+      }
+      function deleteItem(buttonElem){
+         buttonElem.parentElement.remove()
+      }
    </script>
 
 </body>
