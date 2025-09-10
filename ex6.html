@@ -19,7 +19,16 @@
     <script>
         
         // add code here
-        
+        function addItem(){
+            
+            const value = this.value;
+            var newLi = document.createElement("li");
+            var list = document.getElementById("shopList");
+            newLi.innerText = value;
+            list.appendChild(newLi);
+        }
+        const dropdown = document.getElementById("select_item");
+        dropdown.addEventListener("change",addItem);
         
     </script>
 
