@@ -34,6 +34,12 @@
          const deleteButton = document.createElement("button");
          deleteButton.innerText = "Delete";
          deleteButton.setAttribute("onclick","deleteItem(this)")
+         // alternatively,
+         //deleteButton.addEventListener("click", function(){
+         // deleteItem(this)
+         // })
+         // because javascript runs the code on load, it tries to execute the function, but it wont run the annoymous function
+         //arrow also can
          newItem.innerText = inputValue;
          newItem.appendChild(deleteButton);
          list.appendChild(newItem);
